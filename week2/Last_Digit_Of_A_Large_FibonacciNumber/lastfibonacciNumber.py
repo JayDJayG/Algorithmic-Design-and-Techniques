@@ -23,7 +23,8 @@ def calc_fib_mine(n):
             arr[1] = arr[2]
             arr[2] = arr[0]
 
-        return arr[0]
+        stringLen= int(len(str(arr[0])))
+        return str(arr[0])[stringLen - 1]
 
 
 n = int(input())
