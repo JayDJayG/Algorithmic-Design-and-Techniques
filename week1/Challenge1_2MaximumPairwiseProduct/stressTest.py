@@ -3,12 +3,14 @@ import random
 
 iterations = 1
 
+#My implementation: Faster and simplier 
 def mpp(arr):
     arrSorted = sorted(arr)
     arrLen = len(arrSorted)
     return (arrSorted[arrLen - 1] * arrSorted[arrLen - 2])
 
 
+#Slow implementation gave by the course to make Stressingtest
 def max_pairwise_product(arr):
     result = 0
     n = len(arr)
@@ -20,6 +22,8 @@ def max_pairwise_product(arr):
     return result
 
 
+
+#Infinite loop to review if both algorithm implementation give the same output
 while True:
     n = random.randint(2, 1000)
     arr=[]
