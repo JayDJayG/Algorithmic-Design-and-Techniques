@@ -14,11 +14,11 @@ def calc_fib_mine(n):
             arr[1] += arr[0]
 
         if n % 2 == 0:
-            stringLen= int(len(str(arr[0])))
-            return str(arr[0])[stringLen - 1]
-        else:
             stringLen= int(len(str(arr[1])))
             return str(arr[1])[stringLen - 1]
+        else:
+            stringLen= int(len(str(arr[0])))
+            return str(arr[0])[stringLen - 1]
 
 def get_fibonacci_last_digit_naive(n):
     if n <= 1:
@@ -36,7 +36,7 @@ iterations = 1
 
 while True:
 
-    n = random.randint(0, 10000000)
+    n = random.randint(0, 10000)
 
     if calc_fib_mine(n) == get_fibonacci_last_digit_naive(n):
         print("Good Job!")
