@@ -24,7 +24,7 @@ def calc_fib_mine(n):
                 break
 
         lenStr = len(str(fibList[0]))
-        return str(fibList[0])[lenStr -1]
+        return int(str(fibList[0])[lenStr -1])
 
 def get_fibonacci_last_digit_naive(n):
     if n <= 1:
@@ -42,13 +42,14 @@ iterations = 1
 
 while True:
 
-    n = random.randint(0, 1000)
+    n = random.randint(0, 1000000)
 
     if calc_fib_mine(n) == get_fibonacci_last_digit_naive(n):
         print("Good Job!")
     else:
         print("Wrong")
-        break
+        print(calc_fib_mine(n), get_fibonacci_last_digit_naive(n))
+
 
     iterations+= 1
     print(iterations)

@@ -42,7 +42,7 @@ def calc_fib_mine(n):
                 break
 
         lenStr = len(str(fibList[0]))
-        return str(fibList[0])[lenStr -1]
+        return int(str(fibList[0])[lenStr -1])
 
 n = int(input())
 print(calc_fib_mine(n))
