@@ -1,24 +1,30 @@
 import random
 
 def calc_fib_mine(n):
-    arr = [0, 0, 1]
-    if n == 0:
-        return 0
-    elif n == 1:
-        return 1
+    arr = [0, 1]
+    fibList = []
+    m =int((n+2)/2)
+    counter = 0
 
+    if n == 0 or n == 1:
+        return n
     else:
+        for i in range(2, m + 2 ) :
 
-        for i in range(2, n + 1):
-            arr[0] += arr[1]
-            arr[1] += arr[0]
+            arr[0] += arr[1] % 10
+            counter+= 1
+            if( counter == n -1):
+                fibList.append(arr[0])
+                break
 
-        if n % 2 == 0:
-            stringLen= int(len(str(arr[1])))
-            return str(arr[1])[stringLen - 1]
-        else:
-            stringLen= int(len(str(arr[0])))
-            return str(arr[0])[stringLen - 1]
+            arr[1] += arr[0] %10
+            counter+=1
+            if(counter == n -1):
+                fibList.append(arr[1])
+                break
+
+        lenStr = len(str(fibList[0]))
+        return str(fibList[0])[lenStr -1]
 
 def get_fibonacci_last_digit_naive(n):
     if n <= 1:
@@ -36,7 +42,7 @@ iterations = 1
 
 while True:
 
-    n = random.randint(0, 10000)
+    n = random.randint(0, 1000)
 
     if calc_fib_mine(n) == get_fibonacci_last_digit_naive(n):
         print("Good Job!")
