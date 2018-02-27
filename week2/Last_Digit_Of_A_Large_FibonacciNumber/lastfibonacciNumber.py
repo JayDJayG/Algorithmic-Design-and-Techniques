@@ -1,22 +1,3 @@
-'''
- int first = 0;
-    int second = 1;
-
-    int res;
-
-    for (int i = 2; i <= n; i++) {
-        res = (first + second) % 10;
-        first = second;
-        second = res;
-    }
-
-    return res;
-}
-'''
-
-
-
-
 # Uses python3
 def calc_fib_mine(n):
     arr = [0, 1]
